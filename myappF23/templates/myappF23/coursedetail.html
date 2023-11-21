@@ -1,0 +1,15 @@
+{% extends 'myappF23/base.html' %}
+{% block myhdg %}
+Hello Megha Bhargava
+{% endblock %}
+
+{% block body_block %}
+<h2>{{ course.title }}</h2>
+<p>Interested: {{ course.interested }}</p>
+<p>Price: {{ course.price }}</p>
+<form method="post" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Express Interest</button>
+</form>
+{% endblock%}

@@ -1,0 +1,22 @@
+{% extends 'myappF23/base.html' %}
+{% block myhdg %}
+Hello Megha Bhargava
+{% endblock %}
+{% block body_block %}
+
+<body>
+
+<p><b>{{instructor.first_name}} {{instructor.last_name}}</b></p>
+<h2>List of courses</h2>
+<ul>
+    {% for course in courses %}
+        <li>{{course.title}}</li>
+    {% endfor %}
+</ul>
+<h2>List of Students</h2>
+<ul>
+{% for student in students %}
+        <li>{{student.first_name}} {{student.last_name}}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

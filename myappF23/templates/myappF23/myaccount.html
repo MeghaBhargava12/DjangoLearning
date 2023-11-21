@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Welcome to Your Account, {{ user.get_full_name }}</h1>
+
+    {% if is_student %}
+        <h2>Courses Ordered:</h2>
+        <ul>
+            {% for course in courses_ordered %}
+                <li>{{ course.course.title }}- {{course.order_price}}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Courses Interested In:</h2>
+        <ul>
+            {% for course in courses_interested %}
+                <li>{{ course.title }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You are not a registered student!</p>
+    {% endif %}
+
+    <a href="{% url 'myappF23:logout' %}">Logout</a>
+</body>
+</html>

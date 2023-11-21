@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+</head>
+<body>
+
+<p><b>{{category}}</b></p>
+    {% for course in courses %}
+        <li>{{course.title}}</li>
+    {% endfor %}
+<a href="{% url 'myappF23:index' %}">Home(Namespace)</a>
+</body>
+</html>

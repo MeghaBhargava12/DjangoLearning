@@ -1,0 +1,30 @@
+{% extends 'myappF23/base.html' %}
+{% block myhdg %}
+Hello Megha Bhargava
+{% endblock %}
+{% block body_block %}
+
+    {% if category_list %}
+        <h2>List of Categories</h2>
+        <ol>
+            {% for category  in category_list %}
+                <li> <a href="{% url 'myappF23:detail' category_no=category.pk %}"> {{ category.name}} </a> </li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <strong>There are no available categories!</strong>
+    {% endif %}
+
+        {% if instructor_list %}
+        <h2>List of Instructors</h2>
+        <ol>
+            {% for instructor  in instructor_list %}
+                <li> <a href="{% url 'myappF23:instructor_detail' instructor_id=instructor.pk %}"> {{ instructor.first_name}} {{instructor.last_name}} </a> </li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <strong>There are no available Instructors!</strong>
+    {% endif %}
+    <p>Cookies count: {{cookie_count}}</p>
+    <p>{{message}}</p>
+{% endblock %}

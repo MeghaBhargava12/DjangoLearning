@@ -1,0 +1,17 @@
+{% extends 'myappF23/base.html' %}
+{% block myhdg %}
+Hello Megha Bhargava
+{% endblock %}
+{% block body_block %}
+  <h2>Place Order</h2>
+  <form method="post" action="{% url 'myappF23:place_order' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Place Order</button>
+  </form>
+  <ul>
+    {% for course in courlist %}
+      <li>{{ course.title }} - ${{ course.price }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'myappF23/base.html' %}
+{% block myhdg %}
+Hello Megha Bhargava
+{% endblock %}
+
+{% block body_block %}
+  <h2>Order Response</h2>
+  <p>{{ msg }}</p>
+  <a href="{% url 'myappF23:place_order' %}">Back to Place Order</a>
+{% endblock %}

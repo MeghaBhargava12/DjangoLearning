@@ -1,0 +1,15 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+h1{
+    font-size: 40px;
+    font-weight: 600;
+    color: royalblue;
+    text-align: center;
+    background-color: cornsilk;
+}
+.hbar1 {
+    display: inline;
+    margin: 15px;
+}
